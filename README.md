@@ -24,7 +24,7 @@ go install
 
 ### Using `go get`
 ```bash
-go get github.com/ReddyyZ/URLBrute-GO
+go get github.com/ReddyyZ/urlbrute
 ```
 
 ---
