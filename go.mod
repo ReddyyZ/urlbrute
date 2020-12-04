@@ -1,4 +1,4 @@
-module urlbrute
+module github.com/ReddyyZ/urlbrute
 
 go 1.15
 

@@ -2,7 +2,7 @@ package cli
 
 import (
 	"fmt"
-	"urlbrute/core"
+	"github.com/ReddyyZ/urlbrute/core"
 
 	"github.com/thatisuday/commando"
 )

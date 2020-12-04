@@ -1,8 +1,8 @@
 package main
 
 import (
-	"urlbrute/cli"
-	"urlbrute/core"
+	"github.com/ReddyyZ/urlbrute/cli"
+	"github.com/ReddyyZ/urlbrute/core"
 )
 
 func main() {
