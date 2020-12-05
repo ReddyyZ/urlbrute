@@ -65,6 +65,21 @@ func Find(slice []int, val int) (int, bool) {
 //
 //
 
+func DNSFound(url string, domain string, ip string, verbose_level int) {
+	if verbose_level == -1 {
+		fmt.Println(domain)
+	} else if verbose_level == 0 {
+		fmt.Println(url)
+	} else {
+		yellowHi := color.New(color.FgHiYellow)
+
+		fmt.Printf("%s ", url) // Print Dir
+		yellowHi.Print("-> ")
+		fmt.Println(ip)
+	}
+
+}
+
 func DirFound(url string, statuscode int, codes []int) {
 	if _, i := Find(codes, statuscode); !i {
 		return

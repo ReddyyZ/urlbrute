@@ -12,12 +12,22 @@ type Config struct {
 }
 
 type Dir struct {
-	url       string
-	wordlist  string
-	useragent string
-	code      string
-	timeout   int
-	interval  int
+	Url        string
+	Wordlist   string
+	Useragent  string
+	Code       string
+	Timeout    int
+	Interval   int
+	Extensions string
+}
+
+type DNS struct {
+	Domain    string
+	Wordlist  string
+	Interval  int
+	Retry     int
+	DNSServer []string
+	Verbose   int
 }
 
 func NewConfig(version string, description string) *Config {
@@ -28,17 +38,29 @@ func NewConfig(version string, description string) *Config {
 	}
 }
 
-func NewDir(url string, wordlist string, useragent string, code string, timeout int, interval int) *Dir {
+func NewDir(url string, wordlist string, useragent string, code string, timeout int, interval int, extensions string) *Dir {
 	if !strings.Contains(url, "http") {
 		url = fmt.Sprintf("http://%s", url)
 	}
 
 	return &Dir{
-		url:       url,
-		wordlist:  wordlist,
-		useragent: useragent,
-		code:      code,
-		timeout:   timeout,
-		interval:  interval,
+		Url:        url,
+		Wordlist:   wordlist,
+		Useragent:  useragent,
+		Code:       code,
+		Timeout:    timeout,
+		Interval:   interval,
+		Extensions: extensions,
+	}
+}
+
+func NewDNS(domain string, wordlist string, interval int, retry int, dnsserver string, verbose int) *DNS {
+	return &DNS{
+		Domain:    domain,
+		Wordlist:  wordlist,
+		Interval:  interval,
+		Retry:     retry,
+		DNSServer: strings.Split(dnsserver, ","),
+		Verbose:   verbose,
 	}
 }

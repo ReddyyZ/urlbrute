@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	config := core.NewConfig("1.0.0", "Tool for brute-force directories on websites")
+	config := core.NewConfig("1.0.2", "Tool for brute-force directories/dns on websites")
 	cli.Run(config)
 }
